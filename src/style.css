@@ -1,0 +1,392 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #1f2933;
+  background: #eef2f5;
+}
+
+body {
+  margin: 0;
+  min-width: 230px; 
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  border-radius: 9px;
+  padding: 11px 14px;
+  cursor: pointer;
+  background: #e8edf1;
+  color: #17202a;
+  font-weight: 650;
+}
+
+button:hover {
+  filter: brightness(0.97);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.app {
+  min-height: 100vh;
+
+  padding:
+    max(12px, env(safe-area-inset-top))
+    max(12px, env(safe-area-inset-right))
+    max(18px, env(safe-area-inset-bottom))
+    max(12px, env(safe-area-inset-left));
+}
+
+header {
+  max-width: 1400px;
+  margin: 0 auto 12px;
+
+  background: #17202a;
+  color: white;
+
+  border-radius: 14px;
+
+  padding: 16px 18px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+
+  font-size:
+    clamp(18px, 3vw, 22px);
+}
+
+header p {
+  margin: 0;
+
+  opacity: 0.8;
+
+  font-size: 14px;
+}
+
+.tabs {
+  max-width: 1400px;
+
+  margin:
+    0 auto 12px;
+
+  display: flex;
+
+  gap: 8px;
+}
+
+.tab {
+  background: white;
+
+  border: 1px solid #d8dee3;
+}
+
+.tab.active {
+  background: #2c3e50;
+  color: white;
+}
+
+.panel {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.dashboard {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.8fr)
+    minmax(0, 1.4fr);
+
+  gap: 12px;
+}
+
+.left,
+.right {
+  display: grid;
+
+  gap: 12px;
+
+  align-content: start;
+}
+
+.card {
+  background: white;
+
+  border:
+    1px solid #d8dee3;
+
+  border-radius: 12px;
+
+  padding: 14px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.card h2 {
+  margin:
+    0 0 12px;
+
+  font-size: 15px;
+
+  color: #2c3e50;
+}
+
+.button-stack {
+  display: grid;
+  gap: 8px;
+}
+
+.tag-g1 {
+  border-left:
+    5px solid #c0392b;
+}
+
+.tag-g2 {
+  border-left:
+    5px solid #2980b9;
+}
+
+.tag-g3 {
+  border-left:
+    5px solid #7f8c8d;
+}
+
+.outcome-win {
+  background: #d5f5e3;
+}
+
+.outcome-loss {
+  background: #fadbd8;
+}
+
+.outcome-normal {
+  background: #f5f6f7;
+}
+
+.stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+}
+
+.stat {
+  border:
+    1px solid #e1e6ea;
+
+  border-radius: 9px;
+
+  padding: 10px;
+
+  background: #fafbfc;
+}
+
+.stat .label {
+  font-size: 11px;
+
+  color: #6b7785;
+}
+
+.stat .value {
+  font-size: 17px;
+
+  font-weight: 750;
+
+  margin-top: 3px;
+}
+
+.tc {
+  color: #2980b9;
+}
+
+.zone {
+  margin-top: 10px;
+
+  padding: 10px;
+
+  border-radius: 9px;
+
+  background: #fff4e5;
+
+  color: #9a5a00;
+
+  font-weight: 750;
+
+  text-align: center;
+}
+
+.notice {
+  background: #fff8e8;
+
+  border:
+    2px solid #f1d28b;
+
+  border-radius: 9px;
+
+  padding: 10px;
+
+  font-size: 15px;
+
+  line-height: 1.45;
+
+  color: #5c4a1b;
+}
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  font-size: 12px;
+}
+
+th,
+td {
+  padding: 8px 6px;
+
+  border-bottom:
+    1px solid #e6eaed;
+
+  text-align: left;
+}
+
+th {
+  background: #f5f7f8;
+}
+
+.sim-controls {
+  display: flex;
+
+  gap: 10px;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+
+.sim-controls select,
+.sim-controls input {
+  padding: 10px;
+
+  border:
+    1px solid #cfd6dc;
+
+  border-radius: 8px;
+
+  background: white;
+}
+
+.primary {
+  background: #27ae60;
+
+  color: white;
+}
+
+.report {
+  margin-top: 12px;
+
+  min-height: 480px;
+
+  width: 100%;
+
+  resize: vertical;
+
+  padding: 13px;
+
+  border:
+    1px solid #d8dee3;
+
+  border-radius: 10px;
+
+  background: #fcfdfd;
+
+  font:
+    12px/1.45
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace;
+
+  white-space: pre;
+
+  overflow: auto;
+}
+
+.footer-note {
+  max-width: 1400px;
+
+  margin: 12px auto 0;
+
+  text-align: center;
+
+  color: #6b7785;
+
+  font-size: 11px;
+}
+
+@media (max-width: 850px) {
+
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+
+  .app {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  header {
+    border-radius: 10px;
+  }
+
+  .tabs {
+    overflow-x: auto;
+  }
+
+  .tab {
+    white-space: nowrap;
+  }
+
+  .card {
+    padding: 11px;
+  }
+
+  button {
+    min-height: 44px;
+  }
+}
